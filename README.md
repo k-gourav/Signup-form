@@ -45,7 +45,7 @@ A responsive signup form component with an intro section. Built with React, this
 ## Deployment
 
 The app is deployed on Netlify. You can view the live version
-[here](https://signup-form.netlify.app/).
+[here](https://signup-form-app.netlify.app/).
 
 ## Contributing
 
