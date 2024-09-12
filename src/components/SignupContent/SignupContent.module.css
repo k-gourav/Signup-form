@@ -3,6 +3,7 @@
 }
 .signup__page{
     display: flex;
+    align-items: center;
 }
 .signup__title, .signup__body{
     color: #fefdfe;
