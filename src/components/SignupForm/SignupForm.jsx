@@ -9,7 +9,6 @@ const SignupForm = () => {
           <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
         </div>
         <div className={styles.signupform__body}>
-          See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.
           <p><input type="text" name='firstname' placeholder='First Name' className={styles.input__firstname} /></p>
           <p><input type="text" name='lastname' placeholder='Last Name' className={styles.input__lastname} /></p>
           <p><input type="email" name='email' placeholder='Email Address' className={styles.input__email} /></p>
