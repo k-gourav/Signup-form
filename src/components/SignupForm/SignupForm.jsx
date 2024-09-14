@@ -14,7 +14,7 @@ const SignupForm = () => {
           <p><input type="email" name='email' placeholder='Email Address' className={styles.input__email} /></p>
           <p><input type="password" name="password" placeholder="Password" /></p>
           <button type="submit">CLAIM YOUR FREE TRIAL</button>
-          <p>By clicking the button, you are agreeing to our <span id={styles.terms_content}>Terms and Services</span></p>
+          <p className={styles.signup__terms}>By clicking the button, you are agreeing to our <span id={styles.terms_content}>Terms and Services</span></p>
         </div>
     </div>
   )

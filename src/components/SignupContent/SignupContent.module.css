@@ -1,10 +1,28 @@
-.main__element{
-    min-height: 100vh;
+.main__element {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
 }
-.signup__page{
-    display: flex;
-    align-items: center;
+.signup__page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.signup__title, .signup__body{
-    color: #fefdfe;
+.signup__title {
+  color: #fefdfe;
+  width: 80%;
+  font-size: 2.2rem;
+  line-height: 1.4;
+}
+.signup__body {
+  color: #fefdfe;
+  width: 90%;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.signup__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 35%;
 }

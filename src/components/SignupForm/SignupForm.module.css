@@ -1,6 +1,57 @@
+.signupform__content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 35%;
+    box-shadow: 0 5px 0 0 #db6567;
+    border-radius: 6px;
+}
 .signupform__title {
     color: #e2e4e9;
     background-color: #5d54a3;
-    border-radius: 4px;
-    padding: 0.5rem 2rem;
+    border-radius: 6px;
+    padding: 0.8rem;
+    text-align: center;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 0 0 #b76179;
 }
+.signupform__body{
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    background-color: #fff;
+    padding: 1.8rem 2rem;
+    border-radius: 6px;
+}
+.signup__terms{
+    font-size: 0.7rem;
+    color: #a9a9a9;
+    text-align: center;
+    font-weight: 500;
+}
+#terms_content{
+    color:#f5999e;
+}
+input[placeholder]{
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    border: 1px solid #c2bdbd;
+    font-family: inherit;
+    font-weight: 500;
+    width: 100%;
+    outline: none;
+}
+input[placeholder]:focus{
+    border: 1px solid #e2dfed;
+}
+button[type='submit']{
+    background-color: #39c98b;
+    color: #f7fdf5;
+    cursor: pointer;
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    box-shadow: 0 3px 0 0 #c1edda;
+}
+
