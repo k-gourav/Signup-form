@@ -26,3 +26,22 @@
   gap: 1.5rem;
   width: 35%;
 }
+
+@media screen and (max-width: 756px) {
+  .signup__page{
+    flex-direction: column;
+    gap: 3rem;
+    padding: 5rem 0;
+  }
+  .signup__content{
+    width: 85%;
+  }
+  .signup__title{
+    width: 95%;
+    text-align: center;
+  }
+  .signup__body{
+    text-align: center;
+  }
+  
+}

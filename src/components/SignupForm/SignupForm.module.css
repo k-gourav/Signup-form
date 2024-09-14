@@ -10,7 +10,7 @@
     color: #e2e4e9;
     background-color: #5d54a3;
     border-radius: 6px;
-    padding: 0.8rem;
+    padding: 0.8rem 5rem;
     text-align: center;
     font-size: 0.9rem;
     box-shadow: 0 4px 0 0 #b76179;
@@ -53,5 +53,17 @@ button[type='submit']{
     border-radius: 4px;
     font-weight: 600;
     box-shadow: 0 3px 0 0 #c1edda;
+}
+
+@media screen and (max-width: 756px) {
+    .signupform__content{
+        width: 85%;
+    }
+    .signup__terms{
+        width: 90%;
+    }
+    .signupform__body{
+        padding: 1.8rem 1.5rem;
+    }
 }
 
