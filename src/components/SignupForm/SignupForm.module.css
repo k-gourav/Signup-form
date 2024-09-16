@@ -48,6 +48,13 @@ input[placeholder] {
 input[placeholder]:focus {
   border: 1px solid #e2dfed;
 }
+.error__message{
+  color: red;
+  font-size: 0.7rem;
+  font-style: italic;
+  float: right;
+  margin-top: 0.2rem;
+}
 button[type="submit"] {
   background-color: #39c98b;
   color: #f7fdf5;

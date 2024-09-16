@@ -24,6 +24,7 @@ const SignupForm = () => {
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
           />
+          {firstName ? "" : <p className={styles.error__message}>First Name cannot be empty</p>}
         </div>
         <div>
           <input
@@ -34,6 +35,7 @@ const SignupForm = () => {
             onChange={(e) => setLastName(e.target.value)}
             value={lastName}
           />
+          {lastName ? "" : <p className={styles.error__message}>Last Name cannot be empty</p>}
         </div>
         <div>
           <input
@@ -44,6 +46,7 @@ const SignupForm = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
+          {email ? "" : <p className={styles.error__message}>Email cannot be empty</p>}
         </div>
         <div>
           <input
@@ -53,6 +56,7 @@ const SignupForm = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
+          {password ? "" : <p className={styles.error__message}>Password cannot be empty</p>}
         </div>
 
         <button type="submit">CLAIM YOUR FREE TRIAL</button>
