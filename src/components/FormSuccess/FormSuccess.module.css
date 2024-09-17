@@ -11,6 +11,18 @@
     color: azure;
 }
 .formsuccess__content{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: azure;
+    width: 25%;
+    text-align: center;
+}
+
+@media screen and (max-width: 756px) {
+    .formsuccess__title{
+        font-size: 2.5rem;
+    }
+    .formsuccess__content{
+        font-size: 1.2rem;
+        width: 88%;
+    }
 }
