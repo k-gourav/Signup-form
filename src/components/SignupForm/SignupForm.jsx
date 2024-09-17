@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./SignupForm.module.css";
 
 const SignupForm = () => {
@@ -6,6 +7,16 @@ const SignupForm = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (firstName && lastName && email && password) {
+      navigate("/signup-success");
+    }
+
+  }
 
   return (
     <div className={styles.signupform__content}>
@@ -14,7 +25,8 @@ const SignupForm = () => {
           <strong>Try it free 7 days</strong> then $20/mo. thereafter
         </p>
       </div>
-      <div className={styles.signupform__body}>
+
+        <form className={styles.signupform__body} action="" onSubmit={handleSubmit}>
         <div>
           <input
             type="text"
@@ -64,7 +76,7 @@ const SignupForm = () => {
           By clicking the button, you are agreeing to our 
           <span id={styles.terms__content}> Terms and Services</span>
         </p>
-      </div>
+        </form>
     </div>
   );
 };

@@ -1,0 +1,16 @@
+.formsuccess__container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+.formsuccess__title{
+    font-size: 3rem;
+    color: azure;
+}
+.formsuccess__content{
+    font-size: 1.2rem;
+    color: azure;
+}
