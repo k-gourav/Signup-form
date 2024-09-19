@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import errorLogo from '../../assets/icons/icon-error.svg'
 import { useNavigate } from "react-router-dom";
 import styles from "./SignupForm.module.css";
 
@@ -7,6 +8,7 @@ const SignupForm = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   const validateEmail = (email) => {
@@ -16,8 +18,25 @@ const SignupForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (firstName && lastName && validateEmail(email) && password) {
-      setValidInput(true);
+
+    const formErrors = {};
+    if (!firstName) {
+      formErrors.firstName = "First Name cannot be empty";
+    }
+
+    if (!lastName) formErrors.lastName = "Last Name cannot be empty";
+
+    if (!email) {
+      formErrors.email = "Looks like this is not an email";
+    } else if (!validateEmail(email)) {
+      formErrors.email = "Looks like this is not an email";
+    }
+
+    if (!password) formErrors.password = "Password cannot be empty";
+
+    setErrors(formErrors);
+
+    if (Object.keys(formErrors).length === 0) {
       navigate("/signup-success");
     }
   };
@@ -30,79 +49,68 @@ const SignupForm = () => {
         </p>
       </div>
 
-      <form
-        className={styles.signupform__body}
-        action=""
-        onSubmit={handleSubmit}
-      >
+      <div className={styles.signupform__body}>
         <div>
           <input
             type="text"
             name="firstname"
-            placeholder="First Name"
-            className={styles.input__firstname}
+            placeholder={errors.firstName ? "" : "First Name"}
+            className={errors.firstName ? styles.error__input : ""}
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
           />
-          {firstName ? (
-            ""
-          ) : (
-            <p className={styles.error__message}>First Name cannot be empty</p>
+          {errors.firstName && (
+            <p className={styles.error__message}>{errors.firstName}</p>
           )}
         </div>
         <div>
           <input
             type="text"
             name="lastname"
-            placeholder="Last Name"
-            className={styles.input__lastname}
+            placeholder={errors.lastName ? "" : "Last Name"}
+            className={errors.lastName ? styles.error__input : ""}
             onChange={(e) => setLastName(e.target.value)}
             value={lastName}
           />
-          {lastName ? (
-            ""
-          ) : (
-            <p className={styles.error__message}>Last Name cannot be empty</p>
+          {errors.lastName && (
+            <p className={styles.error__message}>{errors.lastName}</p>
           )}
         </div>
         <div>
           <input
             type="email"
             name="email"
-            placeholder="Email Address"
-            className={styles.input__email}
+            placeholder={errors.email ? "email@example/com" : "Email Address"}
+            className={errors.email ? styles.error__input : ""}
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-          {email ? (
-            ""
-          ) : (
-            <p className={styles.error__message}>
-              Looks like this is not an email
-            </p>
+          {errors.email && (
+            <p className={styles.error__message}>{errors.email}</p>
           )}
         </div>
         <div>
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder={errors.password ? "" : "Password"}
+            className={errors.password ? styles.error__input : ""}
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          {password ? (
-            ""
-          ) : (
-            <p className={styles.error__message}>Password cannot be empty</p>
+          {errors.password && (
+            <p className={styles.error__message}>{errors.password}</p>
           )}
         </div>
 
-        <button type="submit">CLAIM YOUR FREE TRIAL</button>
+        <button type="submit" onClick={handleSubmit}>
+          CLAIM YOUR FREE TRIAL
+        </button>
         <p className={styles.signup__terms}>
           By clicking the button, you are agreeing to our
           <span id={styles.terms__content}> Terms and Services</span>
         </p>
-      </form>
+      </div>
     </div>
   );
 };
