@@ -9,14 +9,18 @@ const SignupForm = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    if (firstName && lastName && email && password) {
+    if (firstName && lastName && validateEmail(email) && password) {
+      setValidInput(true);
       navigate("/signup-success");
     }
-
-  }
+  };
 
   return (
     <div className={styles.signupform__content}>
@@ -26,7 +30,11 @@ const SignupForm = () => {
         </p>
       </div>
 
-        <form className={styles.signupform__body} action="" onSubmit={handleSubmit}>
+      <form
+        className={styles.signupform__body}
+        action=""
+        onSubmit={handleSubmit}
+      >
         <div>
           <input
             type="text"
@@ -36,7 +44,11 @@ const SignupForm = () => {
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
           />
-          {firstName ? "" : <p className={styles.error__message}>First Name cannot be empty</p>}
+          {firstName ? (
+            ""
+          ) : (
+            <p className={styles.error__message}>First Name cannot be empty</p>
+          )}
         </div>
         <div>
           <input
@@ -47,7 +59,11 @@ const SignupForm = () => {
             onChange={(e) => setLastName(e.target.value)}
             value={lastName}
           />
-          {lastName ? "" : <p className={styles.error__message}>Last Name cannot be empty</p>}
+          {lastName ? (
+            ""
+          ) : (
+            <p className={styles.error__message}>Last Name cannot be empty</p>
+          )}
         </div>
         <div>
           <input
@@ -58,7 +74,13 @@ const SignupForm = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-          {email ? "" : <p className={styles.error__message}>Email cannot be empty</p>}
+          {email ? (
+            ""
+          ) : (
+            <p className={styles.error__message}>
+              Looks like this is not an email
+            </p>
+          )}
         </div>
         <div>
           <input
@@ -68,15 +90,19 @@ const SignupForm = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          {password ? "" : <p className={styles.error__message}>Password cannot be empty</p>}
+          {password ? (
+            ""
+          ) : (
+            <p className={styles.error__message}>Password cannot be empty</p>
+          )}
         </div>
 
         <button type="submit">CLAIM YOUR FREE TRIAL</button>
         <p className={styles.signup__terms}>
-          By clicking the button, you are agreeing to our 
+          By clicking the button, you are agreeing to our
           <span id={styles.terms__content}> Terms and Services</span>
         </p>
-        </form>
+      </form>
     </div>
   );
 };
