@@ -11,7 +11,7 @@ A responsive signup form component with an intro section. Built with React, this
 
 ## Technologies Used
 
--   React (with Hooks)
+-   React (with Hooks and Form Validation)
 -   Vite (for fast builds)
 -   CSS Modules
 -   Netlify (for deployment)

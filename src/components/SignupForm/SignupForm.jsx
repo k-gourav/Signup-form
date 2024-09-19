@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import errorLogo from '../../assets/icons/icon-error.svg'
 import { useNavigate } from "react-router-dom";
 import styles from "./SignupForm.module.css";
 
