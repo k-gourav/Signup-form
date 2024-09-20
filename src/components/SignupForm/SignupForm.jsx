@@ -53,6 +53,7 @@ const SignupForm = () => {
           <input
             type="text"
             name="firstname"
+            aria-label="Enter your first name"
             placeholder={errors.firstName ? "" : "First Name"}
             className={errors.firstName ? styles.error__input : ""}
             onChange={(e) => setFirstName(e.target.value)}
@@ -66,6 +67,7 @@ const SignupForm = () => {
           <input
             type="text"
             name="lastname"
+            aria-label="Enter your last name"
             placeholder={errors.lastName ? "" : "Last Name"}
             className={errors.lastName ? styles.error__input : ""}
             onChange={(e) => setLastName(e.target.value)}
@@ -79,6 +81,7 @@ const SignupForm = () => {
           <input
             type="email"
             name="email"
+            aria-label="Enter your email"
             placeholder={errors.email ? "email@example/com" : "Email Address"}
             className={errors.email ? styles.error__input : ""}
             onChange={(e) => setEmail(e.target.value)}
@@ -92,6 +95,7 @@ const SignupForm = () => {
           <input
             type="password"
             name="password"
+            aria-label="Enter your password"
             placeholder={errors.password ? "" : "Password"}
             className={errors.password ? styles.error__input : ""}
             onChange={(e) => setPassword(e.target.value)}
@@ -102,7 +106,11 @@ const SignupForm = () => {
           )}
         </div>
 
-        <button type="submit" onClick={handleSubmit}>
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          aria-label="Submit your information"
+        >
           CLAIM YOUR FREE TRIAL
         </button>
         <p className={styles.signup__terms}>
