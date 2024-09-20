@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { validateEmail } from "../../utils/helpers";
 import styles from "./SignupForm.module.css";
 
 const SignupForm = () => {
@@ -9,11 +10,6 @@ const SignupForm = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
