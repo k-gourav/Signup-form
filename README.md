@@ -2,6 +2,9 @@
 
 A responsive signup form component with an intro section. Built with React, this project demonstrates clean UI design, form validation, and responsive behavior to enhance user interaction and accessibility.
 
+![photo-collage png](https://github.com/user-attachments/assets/4e5e2a59-88a3-4332-b51b-bfc23b9f7fbc)
+
+
 ## Features
 
 -   User friendly signup form
